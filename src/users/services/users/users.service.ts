@@ -18,8 +18,8 @@ export class UsersService {
     @InjectRepository(Profile) private profileRepository: Repository<Profile>,
     @InjectRepository(Post) private postRepository: Repository<Post>,
   ) {}
-  findUser() {
-    this.userRepository.find({ relations: ['Profile', 'Post'] });
+  findUsers() {
+    return this.userRepository.find({ relations: ['profile', 'posts'] });
   }
 
   createUser(userDetails: CreateUserParams) {

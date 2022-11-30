@@ -18,9 +18,8 @@ import { UsersService } from 'src/users/services/users/users.service';
 export class UsersController {
   constructor(private userService: UsersService) {}
   @Get()
-  async getUsers() {
-    const users = await this.userService.findUser();
-    return users;
+  getUsers() {
+    return this.userService.findUsers();
   }
 
   @Post()

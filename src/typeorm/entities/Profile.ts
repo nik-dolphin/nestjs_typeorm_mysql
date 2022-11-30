@@ -5,15 +5,15 @@ export class Profile {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
+  @Column({ default: null })
   fisrtName: string;
 
-  @Column()
+  @Column({ default: null })
   lastName: string;
 
-  @Column()
+  @Column({ default: null })
   age: number;
 
-  @Column()
+  @Column({ default: null })
   dob: string;
 }
