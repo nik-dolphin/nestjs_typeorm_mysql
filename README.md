@@ -84,7 +84,7 @@ $ sudo systemctl status mysql
 sudo systemctl enable mysql
 ```
 
-## IF not connected with database
+## When Databse not connected
 
 ```bash
 mysql> select database();
