@@ -1,5 +1,6 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
 import { Post } from 'src/typeorm/entities/Post';
 import { Profile } from 'src/typeorm/entities/Profile';
 import { User } from 'src/typeorm/entities/User';
@@ -9,7 +10,6 @@ import {
   CreateUserProfileParams,
   UpdateUserParams,
 } from 'src/utils/types';
-import { Repository } from 'typeorm';
 
 @Injectable()
 export class UsersService {
@@ -18,6 +18,7 @@ export class UsersService {
     @InjectRepository(Profile) private profileRepository: Repository<Profile>,
     @InjectRepository(Post) private postRepository: Repository<Post>,
   ) {}
+
   findUsers() {
     return this.userRepository.find({ relations: ['profile', 'posts'] });
   }

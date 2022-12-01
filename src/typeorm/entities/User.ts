@@ -14,10 +14,10 @@ export class User {
   @PrimaryGeneratedColumn({ type: 'bigint' })
   id: number;
 
-  @Column({ unique: true, default: null })
+  @Column({ unique: true })
   username: string;
 
-  @Column({ default: null })
+  @Column()
   password: string;
 
   @Column()
