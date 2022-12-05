@@ -7,6 +7,8 @@ import {
   ParseIntPipe,
   Post,
   Put,
+  UsePipes,
+  ValidationPipe,
 } from '@nestjs/common';
 import { CreateUserDto } from 'src/users/dtos/createUser.dto';
 import { CreateUserPostDto } from 'src/users/dtos/createUserPost.dto';
@@ -22,7 +24,8 @@ export class UsersController {
     return this.userService.findUsers();
   }
 
-  @Post()
+  @Post('create')
+  @UsePipes(ValidationPipe)
   createUser(@Body() createUserDto: CreateUserDto) {
     return this.userService.createUser(createUserDto);
   }
