@@ -6,7 +6,7 @@ export class Profile {
   id: number;
 
   @Column()
-  fisrtName: string;
+  firstName: string;
 
   @Column()
   lastName: string;
